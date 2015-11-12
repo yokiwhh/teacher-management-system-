@@ -62,8 +62,10 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME':'online',
         'USER':'root',
-        'PASSWORD':'4031',
-        'HOST':'localhost',
+        'PASSWORD':'mysql',
+        'HOST':'',
+        'PORT':'',
+        
     }
 }
 
@@ -86,4 +88,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS=os.path.join(os.path.dirname(__file__),'templates')
+#TEMPLATE_DIRS=os.path.join(os.path.dirname(__file__),'templates')
+TEMPLATE_DIRS = ('./online/',)

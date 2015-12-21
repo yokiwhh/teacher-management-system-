@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{% load static %}
+<link rel="stylesheet" href="{% static '1.css'%}">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tuijian</title>
+</head>
+<body>
+    <form method = 'post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{uf.as_p}}
+        <input type="submit" value = "提交" />
+    </form>
+	<div align="center"><h1>推荐</h1></div>
+		<table border="1" align="center">
+		<tr>
+			<th>姓名</th>
+			<th>专业</th>
+		</tr>
+            {% for t in teacher %}
+			<tr>
+				<td>{{ t.name }}</td>
+				<td>{{ t.reseachdirection }}</td>
+            {% endfor %}
+			</tr>
+</html>

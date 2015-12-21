@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>日程预约</title>
+</head>
+<body>
+	<div align="center"><h1>jianyue</h1></div>
+	<form method = 'get' >
+		<input name="tname" type="text">
+		<input type="submit" value = "ok" >
+	</form>
+	<table border="1" >
+            {% for message in messages %}
+			<tr>
+				<td>学生 {{ message.student.name }} 预约了 {{ message.teacher.name }} 在 {{ message.date }} {{ message.time }}</td>
+			</tr>								
+			{% endfor %}
+            {% for b in busy %}
+			<tr>
+				<td>教师 {{ b.teacher.name }} 在 {{ b.date }} {{ b.time }} 出差了</td>
+			</tr>
+			{% endfor %}
+ 
+			</tr>
+
+	</table>
+		              
+<form method = 'post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{uf.as_p}}
+    <input type="submit" value = "ok" />
+</form>
+			
+	
+</body>
+</html>

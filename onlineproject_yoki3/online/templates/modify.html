@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tuijian</title>
+    <style type="text/css">
+        div#container{width:1350px}
+        div#header {background-color: #6c96bb;font-size: 30px}
+        div#menu {background-color: #ffffff;height:800px;width:300px;float:left;}
+        div#content {background-color: #ffffff;height:800px;width:1040px;float:left;}
+        h1 {margin-bottom:0;text-align:center;}
+        h2 {margin-bottom:0;font-size:25px;}
+        a.one:link {color: #667755;text-decoration:none;}
+        a.one:visited {color: #667755;text-decoration:none;}
+        a.one:hover {color:#ffcc00;text-decoration:none;}
+
+        a.two:link {color: #667755;text-decoration:none;}
+        a.two:visited {color: #667755;text-decoration:none;}
+        a.two:hover {font-size:150%;text-decoration:none;}
+        #customers
+        {
+            font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        #customers td, #customers th
+        {
+            font-size:1em;
+            text-align:center;
+            border:1px solid #98bf21;
+            padding:3px 7px 2px 7px;
+        }
+
+        #customers th
+        {
+            font-size:1.1em;
+            text-align:center;
+            padding-top:1px;
+            padding-bottom:4px;
+            background-color:#A7C942;
+            color:#ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    <div id="header">
+        <h1>教师信息管理系统</h1>
+    </div>
+
+
+    <div id="menu">
+        <h2>学院导航栏</h2>
+        <u1>
+        {% for c in colleges %}
+            <p><b><a class="two" href="/college/{{ c.number }}/" style='text-decoration:none;' title="see the teachers in the college">  {{ c.collegename }}</a></b></p>
+        {% endfor %}
+        </u1>
+    </div>
+
+    <div id="content">
+        <p><b><a class="one" href="/">返回主页</a></b></p>
+      <h1 align="center">修改预约日期和时间</h1>
+<form method="post" >
+        <p>date <input align="center" name="date" type="text" value={{msg.date|date:'Y-m-d'}}></p>
+        <p>time <input align="center" name="time" type="text" value={{msg.time}}></p>
+		<p><input align="center" type="submit" value="save">     <input align="center" type="reset" value="clear"></p>
+	</form>
+    </div>
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<p>Teachers</p>
+{% if tch %}
+{% for t in tch %}
+    <p>ID : {{ t.teacherID }} name : {{ t.name }}<button onclick="location.href='/deleteuser/?id={{ t.teacherID }}&kind=1'">delete</button></p>
+{% endfor %}
+{% else %}
+    <p>no teachers!!</p>
+{% endif %}
+<p>Students</p>
+{% if std %}
+{% for t in std %}
+    <p>ID : {{ t.studentID }} name : {{ t.name }}<button onclick="location.href='/deleteuser/?id={{ t.studentID }}&kind=0'">delete</button></p>
+{% endfor %}
+{% else %}
+    <p>no students!!</p>
+{% endif %}
